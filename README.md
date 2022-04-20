@@ -8,7 +8,7 @@ Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridef
 `pridefetch -f trans`
 
 #### Display either a trans or lesbian flag, with a 50/50 chance
-`pridefetch -c trans,lesbian`
+`pridefetch -r trans,lesbian`
 
 #### List all the available flags
 `pridefetch -l`
