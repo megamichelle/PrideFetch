@@ -2,7 +2,6 @@
 
 from argparse import ArgumentParser
 from datetime import timedelta
-from packages import get_num_packages as packages
 from getpass import getuser
 # from platform import machine as architecture
 from platform import platform as system
@@ -10,7 +9,10 @@ from platform import release as kernel
 from random import choice as random_choice
 from socket import gethostname
 from time import clock_gettime, CLOCK_BOOTTIME
+
 from distro import name as distribution
+
+from packages import get_num_packages as packages
 
 # Define a dictionary of all the flags and their colors
 # Each color is the color for an individual row in the flag
@@ -20,7 +22,7 @@ flags = {
     "lesbian": [202, 209, 255, 255, 168, 161],
     "pansexual": [198, 220, 39],
     "trans": [81, 211, 255, 211, 81],
-    "nonbinary": [226, 255, 98, 237,],
+    "nonbinary": [226, 255, 98, 237, ],
     "demiboy": [244, 249, 117, 255, 117, 249, 244],
     "demigirl": [244, 249, 218, 255, 218, 249, 244],
     "genderfluid": [211, 255, 128, 0, 63],
