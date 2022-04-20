@@ -2,7 +2,6 @@
 
 Python fetch script for showing your favourite pride flags & system info!<br>
 Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch).<br>
-**Requirements:** `Python 3.7` or higher and `python-distro`.
 
 ## Examples
 
@@ -24,7 +23,7 @@ Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridef
 
 ## Quickstart
 
-Install the requirements before beginning
+**Requirements:** `Python 3.7` or higher and `python-distro`.
 ```bash
 git clone https://github.com/SpyHoodle/pridefetch.git
 cd pridefetch
