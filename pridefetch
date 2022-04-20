@@ -50,6 +50,7 @@ def draw_fetch(flag_name: str, width: int = None):
     row_color = color256(flag[1] if flag[0] != flag[1] else flag[2], "fg")
     black = '\x1b[38;5;242m'
 
+    # The fetch data to be displayed
     row_data = [
         f"{color256(flag[0], 'fg') if row_color != black else color256(242, 'fg')}"
         f"\033[1m{getuser()}@{gethostname()}{reset}",
@@ -60,11 +61,12 @@ def draw_fetch(flag_name: str, width: int = None):
         f"{row_color}uptime  {reset}{str(timedelta(seconds=clock_gettime(CLOCK_BOOTTIME))).split('.', 1)[0]}"
     ]
 
+    # Until the flag is a greater length than the data
     while len(flag) < len(row_data):
-        # If the data is greater than the flag length then duplicate the length of the flag until it is longer
+        # If the data is greater than the flag length then duplicate the length of the flag
         flag = [element for element in flag for _ in (0, 1)]
 
-    # Set the width of the flag relative to it's height
+    # Set the width of the flag relative to its height (keep it in a nice ratio)
     width = width or round(len(flag) * 1.5 * 3)
 
     # Ensures nothing is printed for empty lines
