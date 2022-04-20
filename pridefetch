@@ -64,7 +64,7 @@ def draw_fetch(flag_name: str, width: int = None):
     # Set the width of the flag relative to it's height
     width = width or round(len(flag) * 1.5 * 3)
 
-    # Print nothing for empty lines
+    # Ensures nothing is printed for empty lines
     row_data.append("")
 
     # Print a blank line to separate the flag from the terminal prompt
