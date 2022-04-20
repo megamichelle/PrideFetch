@@ -1,6 +1,7 @@
-# pridefetch
-Python fetch script for showing your favourite pride flags!
-Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch)
+# pridefetch 🏳️‍⚧️
+Python fetch script for showing your favourite pride flags & system info!<br>
+Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch).<br>
+**Note:** `Python 3.10` is now required.
 
 ## Examples
 #### Display a trans flag
