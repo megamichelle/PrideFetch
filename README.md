@@ -1,12 +1,28 @@
 # pridefetch
-Neofetch clone written in Python with the ability to display pride flags
+Python fetch script for showing your favourite pride flags!
+Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch)
 
 ## Examples
-### Display a trans flag
+#### Display a trans flag
 `pridefetch -f trans`
 
-### Display either a trans or lesbian flag, with a 50/50 chance
-`pridefetch -c trans, lesbian`
+#### Display either a trans or lesbian flag, with a 50/50 chance
+`pridefetch -c trans,lesbian`
 
-### List all the available flags
+#### List all the available flags
 `pridefetch -l`
+
+## Quickstart
+```bash
+git clone https://github.com/SpyHoodle/pridefetch.git
+cd pridefetch
+chmod +x pridefetch
+```
+Then, run pridefetch
+```bash
+./pridefetch
+```
+You can also add pridefetch to your `$PATH` to run it anywhere<br>
+```bash
+mv pridefetch /usr/bin/
+```
