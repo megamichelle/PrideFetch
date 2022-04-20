@@ -12,6 +12,9 @@ Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridef
 #### List all the available flags
 `pridefetch -l`
 
+#### Display help with pridefetch
+`pridefetch -h`
+
 ## Quickstart
 ```bash
 git clone https://github.com/SpyHoodle/pridefetch.git
