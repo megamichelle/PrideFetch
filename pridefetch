@@ -48,11 +48,10 @@ def draw_fetch(flag_name: str, width: int = None):
 
     # Make sure that the row color is different to the color of the hostname
     row_color = color256(flag[1] if flag[0] != flag[1] else flag[2], "fg")
-    black = '\x1b[38;5;242m'
 
     # The fetch data to be displayed
     row_data = [
-        f"{color256(flag[0], 'fg') if row_color != black else color256(242, 'fg')}"
+        f"{color256(flag[0], 'fg') if flag[0] != 0 else color256(242, 'fg')}"
         f"\033[1m{getuser()}@{gethostname()}{reset}",
         f"{row_color}os      {reset}{distribution() or system() or 'N/A'}",
         # f"{row_color}arch    {reset}{architecture() or 'N/A'}",
