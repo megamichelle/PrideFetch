@@ -2,7 +2,7 @@
 
 ![pridefetch screenshot](https://file.coffee/u/J0dk4lIjU5Wmdu.png)<br>
 Python fetch script for showing your favourite pride flags & system info!<br>
-Forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch).<br>
+Originally forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch).<br>
 
 ## Examples
 
