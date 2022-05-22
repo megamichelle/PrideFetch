@@ -45,6 +45,7 @@ mv pridefetch /usr/bin/
 
 ## Running on NixOS
 #### If your system supports flakes
+> ⚠ Note: This has only been tried on x86_64-linux; while it may work if your system is something different I have only tested it
 You can run pridefetch quickly
 
 ```bash
