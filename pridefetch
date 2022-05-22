@@ -100,14 +100,17 @@ def main():
         # Draw the chosen flag and system information
         draw_fetch(args.flag, args.width)
 
-    if args.random:
+    elif args.random:
         # Choose a flag at random from a list of comma-seperated flags
         flag_choices = args.random.split(",")
         draw_fetch(random_choice(flag_choices), args.width)
 
-    if args.list:
+    elif args.list:
         # List out all the available flags
         print(f"Available flags:\n{', '.join(flags)}")
+
+    else:
+        draw_fetch("classic", args.width)
 
 
 if __name__ == "__main__":
