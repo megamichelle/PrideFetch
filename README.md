@@ -42,3 +42,19 @@ You can also add pridefetch to your `$PATH` to run it anywhere<br>
 ```bash
 mv pridefetch /usr/bin/
 ```
+
+## Running on NixOS
+#### If your system supports flakes
+> ⚠ Note: This has only been tried on x86_64-linux; while it may work if your system is something different I have only tested it
+You can run pridefetch quickly
+
+```bash
+nix run github:SpyHoodle/pridefetch -- -f trans
+```
+
+Or install it
+
+```
+nix profile install github:SpyHoodle/pridefetch
+pridefetch -f trans
+```
