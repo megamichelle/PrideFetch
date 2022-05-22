@@ -45,16 +45,17 @@ mv pridefetch /usr/bin/
 
 ## Running on NixOS
 #### If your system supports flakes
-> ⚠ Note: This has only been tried on x86_64-linux; while it may work if your system is something different I have only tested it
-You can run pridefetch quickly
+> ⚠ Note: This has only been tested on x86_64-linux; it may or may not work on your system
+
+You can run pridefetch straight away
 
 ```bash
-nix run github:SpyHoodle/pridefetch -- -f trans
+nix run github:SpyHoodle/pridefetch
 ```
 
-Or install it
+Or, install it and run
 
-```
+```bash
 nix profile install github:SpyHoodle/pridefetch
-pridefetch -f trans
+pridefetch
 ```
