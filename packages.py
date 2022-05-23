@@ -1,28 +1,20 @@
 from subprocess import check_output
 
+commands = [
+    "pacman -Qq",
+    "apt list --installed",
+    "yum list installed",
+    "dnf list installed",
+    "qlist -I",
+    "nix profile list",
+    "nix-env -q",
+    "rpm -qa",
+]
 
 def get_num_packages() -> (int, bool):
-    try:
-        return len(check_output(["pacman", "-Qq"]).decode("utf-8").split("\n")) - 1
-    except FileNotFoundError:
-        pass
-    try:
-        return len(check_output(["apt", "list", "--installed"]).decode("utf-8").split("\n")) - 1
-    except FileNotFoundError:
-        pass
-    try:
-        return len(check_output(["yum", "list", "installed"]).decode("utf-8").split("\n")) - 1
-    except FileNotFoundError:
-        pass
-    try:
-        return len(check_output(["dnf", "list", "installed"]).decode("utf-8").split("\n")) - 1
-    except FileNotFoundError:
-        pass
-    try:
-        return len(check_output(["qlist", "-I"]).decode("utf-8").split("\n")) - 1
-    except FileNotFoundError:
-        pass
-    try:
-        return len(check_output(["rpm", "-qa"]).decode("utf-8").split("\n")) - 1
-    except FileNotFoundError:
-        return False
+    for command in commands:
+        try:
+            return len(check_output(command.split(" ")).decode("utf-8").split("\n")) - 1
+        except FileNotFoundError:
+            pass
+    return False
