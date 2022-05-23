@@ -25,6 +25,27 @@
           cp ${./packages.py} $out/bin/packages.py
           chmod +x $out/bin/pridefetch
         '';
+        meta = with pkgs.lib; {
+          description = "Print out system statistics with pride flags";
+          longDescription = ''
+            Pridefetch prints your system statistics (similarly to neofetch, screenfetch or pfetch) along with a pride flag.
+            The flag which is printed is configurable, as well as the width of the output.
+          '';
+          homepage = https://github.com/SpyHoodle/pridefetch;
+          license = "bsd"; 
+          # https://static.domenkozar.com/nixpkgs-manual-sphinx-exp/meta.xml.html
+          # > Catch-all for licenses that are essentially similar to the original BSD license with the advertising clause removed, i.e. permissive non-copyleft free software licenses. This includes the X11 (“MIT”) License.
+          # our license is MIT, so BSD is set here
+          maintainers = [
+            {
+              email = "skyler3665@gmail.com";
+              github = "minion3665";
+              githubId = 34243578;
+              name = "Skyler Grey";
+            }
+          ];  # TODO: Replace this with a reference to the maintainer list after adding myself to it
+          platforms = systems.supported.hydra;
+        };
       };
     });
 
