@@ -6,9 +6,7 @@ commands = [
     "yum list installed",
     "dnf list installed",
     "qlist -I",
-    "nix profile list",
-    "nix-env -q",
-    "rpm -qa",
+    "nix-store -qR /run/current-system/sw",
 ]
 
 def get_num_packages() -> (int, bool):
