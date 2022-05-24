@@ -32,7 +32,19 @@ jobs:
           cd src
           zip -r ../pridefetch.zip *
       
-      - name: turn into a UNIX executable
+      - name: Turn into a UNIX executable
         run: |
           echo '#!/usr/bin/env python' | cat - pridefetch.zip > pridefetch
           chmod +x pridefetch
+      
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Build executable" -a
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
