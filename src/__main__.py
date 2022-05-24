@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 
+# General imports
 from argparse import ArgumentParser
 from datetime import timedelta
-from getpass import getuser
-# from platform import machine as architecture
-from platform import platform as system
-from platform import release as kernel
 from random import choice as random_choice
-from socket import gethostname
 from time import clock_gettime, CLOCK_BOOTTIME
 
+# Title - user@hostname
+from getpass import getuser
+from socket import gethostname
+
+# System info modules
+from platform import platform as system
+from platform import release as kernel
+# from platform import machine as architecture
 from distro import name as distribution
+from modules.packages import get_num_packages as packages
 
-from packages import get_num_packages as packages
-
-# Define a dictionary of all the flags and their colors
+# A dictionary of all the flags and their colors
 # Each color is the color for an individual row in the flag
 flags = {
     "classic": [196, 208, 226, 28, 20, 90],
@@ -38,18 +41,18 @@ reset = "\033[0m\033[39m"
 
 
 def color256(col: int, bg_fg: str) -> str:
-    # Hacky alias around manually typing out escape codes every time
+    # Alias to avoid manually typing out escape codes every time
     return f"\033[{48 if bg_fg == 'bg' else 38};5;{col}m"
 
 
 def draw_fetch(flag_name: str, width: int = None):
-    # Load the flag from the dictionary of flags
+    # Load the chosen flag from the dictionary of flags
     flag = flags[flag_name]
 
     # Make sure that the row color is different to the color of the hostname
     row_color = color256(flag[1] if flag[0] != flag[1] else flag[2], "fg")
 
-    # The fetch data to be displayed
+    # The fetch data (system info) to be displayed
     row_data = [
         f"{color256(flag[0], 'fg') if flag[0] != 0 else color256(242, 'fg')}"
         f"\033[1m{getuser()}@{gethostname()}{reset}",
@@ -65,7 +68,7 @@ def draw_fetch(flag_name: str, width: int = None):
         # If the data is greater than the flag length then duplicate the length of the flag
         flag = [element for element in flag for _ in (0, 1)]
 
-    # Set the width of the flag relative to its height (keep it in a nice ratio)
+    # Set the width of the flag relative to its height (keep it in a ratio)
     width = width or round(len(flag) * 1.5 * 3)
 
     # Ensures nothing is printed for empty lines
@@ -83,14 +86,14 @@ def draw_fetch(flag_name: str, width: int = None):
 
 
 def main():
-    # Argument configuration
+    # Argument configuration - options
     parser = ArgumentParser()
     parser.add_argument("-f", "--flag", help="displays the chosen flag")
     parser.add_argument("-r", "--random", help="randomly choose a flag from a list seperated by commas")
     parser.add_argument("-w", "--width", help="choose a custom width for the flag", type=int)
     parser.add_argument("-l", "--list", help="lists all the flags that can be displayed", action="store_true")
 
-    # Parse the arguments
+    # Parse (collect) any arguments
     args = parser.parse_args()
 
     if args.flag:
@@ -110,6 +113,7 @@ def main():
         print(f"Available flags:\n{', '.join(flags)}")
 
     else:
+        # By default, draw the classic flag
         draw_fetch("classic", args.width)
 
 
