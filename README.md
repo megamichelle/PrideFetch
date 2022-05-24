@@ -33,7 +33,7 @@ python __main__.py
 
 ## Running on NixOS
 #### If your system supports flakes
-> ⚠ Note: This has only been tested on x86_64-linux; it may or may not work on your system
+> ⚠ Note: This has only been tested on x86_64-linux; it may or may not work on your system.
 
 You can run pridefetch straight away
 
