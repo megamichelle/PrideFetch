@@ -21,7 +21,9 @@
         unpackPhase = "true";
         installPhase = ''
           mkdir -p $out/bin
-          cp ${./pridefetch} $out/bin/pridefetch
+          cd src
+          zip -r ../pridefetch.zip *
+          echo '#!/usr/bin/env python' | cat - pridefetch.zip > $out/bin/pridefetch
           chmod +x $out/bin/pridefetch
         '';
         meta = with pkgs.lib; {
