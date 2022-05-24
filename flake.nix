@@ -22,7 +22,6 @@
         installPhase = ''
           mkdir -p $out/bin
           cp ${./pridefetch} $out/bin/pridefetch
-          cp ${./packages.py} $out/bin/packages.py
           chmod +x $out/bin/pridefetch
         '';
         meta = with pkgs.lib; {
