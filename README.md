@@ -1,7 +1,7 @@
 # pridefetch 🏳️‍⚧️
 
 ![pridefetch screenshot](https://file.coffee/u/J0dk4lIjU5Wmdu.png)<br>
-Python fetch script for showing your favourite pride flags & system info!<br>
+Python fetch script for showing your favourite pride flags & system stats!<br>
 Originally forked from [megabytesofrem/pridefetch](https://github.com/megabytesofrem/pridefetch).<br>
 
 ## Examples
@@ -53,9 +53,15 @@ You can run pridefetch straight away
 nix run github:SpyHoodle/pridefetch
 ```
 
-Or, install it and run
+Or, install it and then run
 
 ```bash
 nix profile install github:SpyHoodle/pridefetch
 pridefetch
 ```
+
+## Made with ❤️
+ - [SpyHoodle](https://github.com/SpyHoodle) - Developer
+ - [Minion3665](https://github.com/Minion3665) - Developer
+ - [megabytesofrem](https://github.com/megabytesofrem) - Original author and contributor
+ - [R0dn3yS](https://github.com/R0dn3yS) - AUR maintainer
