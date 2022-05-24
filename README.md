@@ -60,7 +60,7 @@ nix profile install github:SpyHoodle/pridefetch
 pridefetch
 ```
 
-## Made with ❤️ and 🏳️‍⚧
+## Made with ❤️ and 🏳️‍⚧️
  - Pridefetch is at an early stage, so may not work on all systems. 
- - Please report any issues or bugs on the Issues tab
+ - Please report any issues or bugs on the Issues tab.
  - Checkout our [contributing guidelines](https://github.com/SpyHoodle/pridefetch/blob/master/CONTRIBUTING.md) if you'd like to contribute.
