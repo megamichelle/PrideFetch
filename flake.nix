@@ -13,18 +13,20 @@
     in {
       pridefetch = pkgs.stdenv.mkDerivation {
         name = "pridefetch";
-        buildInputs = [
-          (pkgs.python39.withPackages (pythonPackages: with pythonPackages; [
+        buildInputs = with pkgs; [
+          (python39.withPackages (pythonPackages: with pythonPackages; [
             distro          
           ]))
+          zip
         ];
         unpackPhase = "true";
         installPhase = ''
           mkdir -p $out/bin
-          cd src
-          zip -r ../pridefetch.zip *
-          echo '#!/usr/bin/env python' | cat - pridefetch.zip > $out/bin/pridefetch
+          cd ${./src}
+          zip -r $out/pridefetch.zip *
+          echo '#!/usr/bin/env python' | cat - $out/pridefetch.zip > $out/bin/pridefetch
           chmod +x $out/bin/pridefetch
+          rm $out/pridefetch.zip
         '';
         meta = with pkgs.lib; {
           description = "Print out system statistics with pride flags";
