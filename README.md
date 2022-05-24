@@ -27,20 +27,8 @@ Originally forked from [megabytesofrem/pridefetch](https://github.com/megabyteso
 **Requirements:** `Python 3.7` or higher and `python-distro`
 ```bash
 git clone https://github.com/SpyHoodle/pridefetch.git
-cd pridefetch
-chmod +x pridefetch
-```
-
-Then, run pridefetch
-
-```bash
-./pridefetch
-```
-
-You can also add pridefetch to your `$PATH` to run it anywhere<br>
-
-```bash
-mv pridefetch /usr/bin/
+cd pridefetch/src
+python __main__.py
 ```
 
 ## Running on NixOS
@@ -61,6 +49,6 @@ pridefetch
 ```
 
 ## Made with ❤️ and 🏳️‍⚧️
- - Pridefetch is at an early stage, so may not work on all systems. 
+ - Pridefetch is at an early stage, so may not work on all systems.
  - Please report any issues or bugs on the Issues tab.
  - Checkout our [contributing guidelines](https://github.com/SpyHoodle/pridefetch/blob/master/CONTRIBUTING.md) if you'd like to contribute.
