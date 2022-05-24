@@ -31,6 +31,7 @@ jobs:
         run: |
           cd src
           zip -r ../pridefetch.zip *
+          cd ..
       
       - name: Turn into a UNIX executable
         run: |
@@ -39,6 +40,8 @@ jobs:
       
       - name: Commit files
         run: |
+          git add pridefetch.zip
+          git add pridefetch
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "Build executable" -a
