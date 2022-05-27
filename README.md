@@ -48,6 +48,20 @@ nix profile install github:SpyHoodle/pridefetch
 pridefetch
 ```
 
+## Running on Arch Linux
+from the AUR
+```bash
+git clone https://aur.archlinux.org/pridefetch.git
+cd pridefetch
+makepkg -si
+```
+
+Or, with your AUR helper
+
+```bash
+paru -S pridefetch
+```
+
 ## Made with ❤️ and 🏳️‍⚧️
  - Pridefetch is at an early stage, so may not work on all systems.
  - Please report any issues or bugs on the Issues tab.
