@@ -49,7 +49,9 @@ pridefetch
 ```
 
 ## Running on Arch Linux
-from the AUR
+
+From the AUR
+
 ```bash
 git clone https://aur.archlinux.org/pridefetch.git
 cd pridefetch
