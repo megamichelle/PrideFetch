@@ -14,7 +14,14 @@ from socket import gethostname
 # System info modules
 from platform import platform as system
 from platform import release as kernel
-from time import clock_gettime, CLOCK_BOOTTIME
+try:
+  # CLOCK_BOOTTIME is only in Linux. CLOCK_MONOTONIC is more cross-platform,
+  # but CLOCK_BOOTTIME also includes the time that the system spends suspended.
+  # So let's use CLOCK_BOOTTIME if it's available.
+  from time import clock_gettime, CLOCK_BOOTTIME as clock_uptime
+except ImportError:
+  from time import clock_gettime, CLOCK_MONOTONIC as clock_uptime
+
 from platform import machine as architecture
 from distro import name as distribution
 from modules.packages import get_num_packages as packages
@@ -45,7 +52,7 @@ stats = {
     "arch": lambda: architecture() or 'N/A',
     "pkgs": lambda: packages() or 'N/A',
     "kernel": lambda: kernel() or system() or 'N/A',
-    "uptime": lambda: str(timedelta(seconds=clock_gettime(CLOCK_BOOTTIME))).split('.', 1)[0]
+    "uptime": lambda: str(timedelta(seconds=clock_gettime(clock_uptime))).split('.', 1)[0]
 }
 
 
